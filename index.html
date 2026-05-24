@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Business Trail | Free Smart Inventory & Customer Debt Tracker App</title>
+    <meta name="description" content="Download Business Trail for Android. The ultimate lightweight, native app for small businesses to track retail stock, calculate profits, and manage outstanding customer credit without internet dependencies.">
+    <meta name="keywords" content="business trail app, customer debt tracker, stock inventory manager, free ledger book android, track customer credit, native store management apk, small business accounting tools">
+    <meta name="author" content="Banda Thoko">
+    <meta name="robots" content="index, follow">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Business Trail - Free Smart Inventory & Debt Tracker">
+    <meta property="og:description" content="Stop losing track of unpaid sales. Easily monitor store inventory value and customer balances using a lightning-fast native application.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="https://bandathoko.github.io/Business-Trail/">
+
+    <style>
+        :root {
+            --primary: #1b5e20; /* High Contrast Emerald Material Green */
+            --primary-glow: rgba(27, 94, 32, 0.2);
+            --dark-surface: #0a0f0d;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --accent-orange: #ea580c; /* High urgency contrast for callouts */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
+
+        /* Semantic Structure Layout */
+        header {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            padding: 1.25rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        /* Main Hero Presentation */
+        .hero-wrapper {
+            padding-top: 8rem;
+            background: radial-gradient(circle at 90% 10%, rgba(46, 125, 50, 0.05) 0%, transparent 40%);
+        }
+
+        .hero-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem 2rem;
+            text-align: center;
+        }
+
+        .badge-premium {
+            display: inline-block;
+            background: #e2f0d9;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 0.4rem 1rem;
+            border-radius: 30px;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .hero-container h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: #0f172a;
+            letter-spacing: -1.5px;
+            line-height: 1.15;
+            max-width: 900px;
+            margin: 0 auto 1.5rem auto;
+        }
+
+        .hero-container h1 em {
+            font-style: normal;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .hero-container p.subtitle {
+            font-size: 1.35rem;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin: 0 auto 3rem auto;
+        }
+
+        /* High-Conversion Download Core */
+        .cta-block {
+            display: inline-block;
+            position: relative;
+            z-index: 10;
+        }
+
+        .download-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, #164e18 100%);
+            color: white;
+            text-decoration: none;
+            padding: 1.25rem 3.5rem;
+            font-size: 1.3rem;
+            font-weight: 800;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px var(--primary-glow);
+            transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .download-action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(27, 94, 32, 0.35);
+        }
+
+        .download-action-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        .trust-signal {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .trust-signal span { color: #22c55e; font-weight: bold; }
+
+        /* Social Proof/Pain Point Section */
+        .pain-points-section {
+            background: #ffffff;
+            padding: 5rem 2rem;
+            border-top: 1px solid #edf2f7;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 3rem;
+            letter-spacing: -0.5px;
+        }
+
+        .grid-layout {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+
+        .value-card {
+            background: var(--bg-light);
+            border: 1px solid #e2e8f0;
+            padding: 2.5rem;
+            border-radius: 16px;
+            text-align: left;
+            transition: border 0.2s;
+        }
+
+        .value-card:hover {
+            border-color: #cbd5e1;
+        }
+
+        .card-meta-icon {
+            background: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+            margin-bottom: 1.5rem;
+        }
+
+        .value-card h3 {
+            font-size: 1.35rem;
+            margin-bottom: 0.75rem;
+            color: #0f172a;
+        }
+
+        /* Onboarding Friction Reduction */
+        .installation-blueprint {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .step-timeline {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 1.5rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            border-left: 5px solid var(--primary);
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
+        }
+
+        .badge-counter {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            opacity: 0.4;
+        }
+
+        .timeline-item p {
+            margin-top: 0.25rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            background: var(--dark-surface);
+            color: #94a3b8;
+            padding: 4rem 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            .hero-container h1 { font-size: 2.4rem; }
+            .hero-container p.subtitle { font-size: 1.1rem; }
+            .download-action-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-group">📈 Business Trail</div>
+    </header>
+
+    <main>
+        <section class="hero-wrapper">
+            <div class="hero-container">
+                <span class="badge-premium">Now Available • 100% Free Ledger App</span>
+                <h1>Stop Losing Money. Track Store Stock & <em>Customer Debt</em> Instantly.</h1>
+                <p class="subtitle">The ultra-fast, data-free Android bookkeeping application engineered natively to keep your local retail operations profitable and liquid.</p>
+                
+                <div class="cta-block">
+                    <a href="https://github.com/BANDATHOKO/Business-Trail/releases/latest/download/app-release.apk" class="download-action-btn" rel="nofollow">
+                        <svg viewBox="0 0 24 24"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+                        Download Android APK
+                    </a>
+                    <div class="trust-signal">
+                        ✅ Verified Secure Build • <span>Only 4.15 MB</span> • No Cloud Data Leakage
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="pain-points-section">
+            <h2 class="section-title">Built For Small Businesses & Retail Stores</h2>
+            <div class="grid-layout">
+                <article class="value-card">
+                    <div class="card-meta-icon">📊</div>
+                    <h3>Smart Stock Valuation</h3>
+                    <p>Calculate total inventory asset value in real-time. Instantly recognize shifts in physical stock weights and prevent inventory tracking gaps.</p>
+                </article>
+
+                <article class="value-card">
+                    <div class="card-meta-icon">💰</div>
+                    <h3>Customer Credit Management</h3>
+                    <p>Monitor customer balances and evaluate real-time debt ratios. Stop guesswork and instantly map out precise customer credit safely.</p>
+                </article>
+
+                <article class="value-card">
+                    <div class="card-meta-icon">⚡</div>
+                    <h3>Zero Internet Overhead</h3>
+                    <p>Runs entirely offline on SQLite with Jetpack Compose layouts. No expensive monthly web database costs or mobile data tracking required.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="installation-blueprint">
+            <h2 style="text-align: center; font-size: 2rem;">Safe Installation Blueprint</h2>
+            <p style="text-align: center; color: var(--text-muted); margin-top: 0.5rem;">How to install your optimized business toolkit in seconds:</p>
+            
+            <div class="step-timeline">
+                <div class="timeline-item">
+                    <div class="badge-counter">01</div>
+                    <div>
+                        <strong>Initiate Download</strong>
+                        <p>Click the main installer link above. The production-ready package file builds directly from your official cloud workspace.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="badge-counter">02</div>
+                    <div>
+                        <strong>Approve Android Security</strong>
+                        <p>If your device presents an external warning prompt, check <em>"Download Anyway"</em>. This is a default shield for standalone custom APK setups.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="badge-counter">03</div>
+                    <div>
+                        <strong>Deploy Safely</strong>
+                        <p>Open the completed download asset, toggle Android's source verification to active, and launch your private ledger workstation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Business Trail. Optimized Local Data Integrity System. <a href="https://github.com/BANDATHOKO/Business-Trail" target="_blank" rel="noopener">View Source Workspace</a></p>
+    </footer>
+
+</body>
+</html>
